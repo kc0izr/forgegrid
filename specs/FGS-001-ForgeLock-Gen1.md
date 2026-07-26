@@ -2,9 +2,9 @@
 
 **Status:** experimental; not frozen.
 
-ForgeLock Gen 1 is a captured inverted-T rail and channel that slides along a
-single axis. The channel provides the mechanical capture and end stop. Magnetic
-preload is deferred until the clearance baseline is selected.
+The original captured inverted-T concept is under redesign. FG-CONN-100 in
+v0.2.2-alpha validates the ForgeGuide 45-degree sliding profile only; it is
+not yet a ForgeLock retention standard.
 
 ## Fit variants
 

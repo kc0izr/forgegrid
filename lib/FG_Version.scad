@@ -1,4 +1,4 @@
-/* ForgeGrid | FG_Version.scad | v0.2.0-alpha */
+/* ForgeGrid | FG_Version.scad | v0.2.1-alpha */
 include <FG_Common.scad>;
 
 function fgVersionString() = FG_PROJECT_VERSION;

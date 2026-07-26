@@ -1,80 +1,70 @@
-/* ForgeGrid | FG_Connectors.scad | v0.2.0-alpha
-   ForgeLock Gen 1 baseline fit geometry.
-   Rail and channel slide along the X axis. This revision intentionally excludes
-   magnets and detents so clearance can be measured without confounding forces. */
+/* ForgeGrid | FG_Connectors.scad | v0.2.2-alpha
+   ForgeGuide v0: a self-supporting, open 45-degree V-guide calibration profile.
+   It validates sliding fit only. It deliberately does not provide final lift
+   retention; that is tested in a later, separate locking prototype. */
 include <FG_Common.scad>;
 
-// The captured rail. Place this directly on a module's top surface.
-module fgForgeLockRail(length=FG_FL_RAIL_LENGTH,
-                       stem_width=FG_FL_STEM_WIDTH,
-                       head_width=FG_FL_HEAD_WIDTH,
-                       stem_height=FG_FL_STEM_HEIGHT,
-                       head_height=FG_FL_HEAD_HEIGHT,
-                       base_height=FG_FL_BASE_HEIGHT,
-                       lead_in=1.2) {
+// A 45-degree trapezoidal rail, extruded along X. It prints directly on its
+// narrow lower face and has no unsupported horizontal surfaces.
+module fgForgeGuideRail(length=FG_FG_RAIL_LENGTH,
+                        bottom_width=FG_FG_BOTTOM_WIDTH,
+                        top_width=FG_FG_TOP_WIDTH,
+                        height=FG_FG_HEIGHT) {
+    rotate([0,90,0])
+        linear_extrude(height=length)
+            polygon(points=[
+                [-height, -bottom_width/2],
+                [-height,  bottom_width/2],
+                [0,         top_width/2],
+                [0,        -top_width/2]
+            ]);
+}
+
+// Subtractive guide channel. The top is intentionally open: its 45-degree
+// walls need no bridging or supports when the receiver is printed flat.
+module fgForgeGuideChannel(length=FG_FG_RAIL_LENGTH,
+                           clearance=FG_SLIDING_CLEARANCE,
+                           bottom_width=FG_FG_BOTTOM_WIDTH,
+                           top_width=FG_FG_TOP_WIDTH,
+                           height=FG_FG_HEIGHT,
+                           floor=FG_FG_CHANNEL_FLOOR) {
+    translate([0, 0, floor])
+        fgForgeGuideRail(
+            length=length + 0.02,
+            bottom_width=bottom_width + 2*clearance,
+            top_width=top_width + 2*clearance,
+            height=height + 0.02);
+}
+
+// Open-top receiver. The rail rests on the internal floor after being lowered
+// into the V-guide, then is slid along X to assess fit.
+module fgForgeGuideChannelBlock(length=FG_FG_RAIL_LENGTH,
+                                clearance=FG_SLIDING_CLEARANCE) {
+    block_length = length + FG_FG_WALL;
+    block_height = FG_FG_CHANNEL_FLOOR + FG_FG_HEIGHT;
     difference() {
-        union() {
-            // Stem and head create an inverted-T captured profile.
-            translate([0, -stem_width/2, base_height])
-                cube([length, stem_width, stem_height]);
-            translate([0, -head_width/2, base_height + stem_height])
-                cube([length, head_width, head_height]);
-        }
-        // 45-degree lead-in on insertion end (negative X).
-        translate([-0.01, -head_width/2-0.01, base_height+stem_height])
-            rotate([0,45,0]) cube([lead_in*1.42, head_width+0.02, lead_in*1.42]);
+        cube([block_length, FG_FG_HOUSING_WIDTH, block_height]);
+        translate([0, FG_FG_HOUSING_WIDTH/2, 0])
+            fgForgeGuideChannel(length=length, clearance=clearance);
     }
 }
 
-// Subtractive captured channel. Cut this from a solid housing.
-module fgForgeLockChannel(length=FG_FL_RAIL_LENGTH,
-                          clearance=FG_SLIDING_CLEARANCE,
-                          stem_width=FG_FL_STEM_WIDTH,
-                          head_width=FG_FL_HEAD_WIDTH,
-                          stem_height=FG_FL_STEM_HEIGHT,
-                          head_height=FG_FL_HEAD_HEIGHT,
-                          base_height=FG_FL_BASE_HEIGHT,
-                          lead_in=1.2) {
-    // Clearances apply across both sides / vertical faces.
-    translate([-0.01, -(stem_width + 2*clearance)/2, base_height-clearance])
-        cube([length+0.02, stem_width + 2*clearance, stem_height + clearance]);
-    translate([-0.01, -(head_width + 2*clearance)/2, base_height + stem_height-clearance])
-        cube([length+0.02, head_width + 2*clearance, head_height + 2*clearance]);
-    // Broad entry funnel at the open end.
-    translate([-0.01, -(head_width + 2*clearance)/2, base_height + stem_height-clearance])
-        rotate([0,45,0]) cube([lead_in*1.42, head_width+2*clearance, lead_in*1.42]);
-}
-
-// A printable receiver block, open at X=0 with a solid end stop at +X.
-module fgForgeLockChannelBlock(length=FG_FL_RAIL_LENGTH,
-                               clearance=FG_SLIDING_CLEARANCE,
-                               wall=FG_WALL_NORMAL,
-                               label="") {
-    block_length = length + wall + FG_FL_STOP_WIDTH;
-    difference() {
-        cube([block_length, FG_FL_HOUSING_WIDTH, FG_FL_HOUSING_HEIGHT]);
-        translate([0, FG_FL_HOUSING_WIDTH/2, 0])
-            fgForgeLockChannel(length=length, clearance=clearance);
-        // Recessed label on top, intentionally shallow.
-        if (label != "")
-            translate([block_length/2, FG_FL_HOUSING_WIDTH/2, FG_FL_HOUSING_HEIGHT-FG_TEXT_DEPTH])
-                fgText(label, size=2.7, depth=FG_TEXT_DEPTH+0.02);
-    }
-}
-
-// A printable rail test piece with a grip tab and matching label.
-module fgForgeLockRailBlock(length=FG_FL_RAIL_LENGTH,
-                            clearance=FG_SLIDING_CLEARANCE,
-                            label="") {
+// Rail coupon with a labelled grip tab. The rail begins immediately after the
+// tab, allowing it to slide into a matching receiver without interference.
+module fgForgeGuideRailBlock(length=FG_FG_RAIL_LENGTH,
+                             clearance=FG_SLIDING_CLEARANCE,
+                             label="") {
     grip_length = 12;
+    grip_width = 12;
+    grip_height = FG_FG_HEIGHT;
     difference() {
         union() {
-            cube([length + grip_length, FG_FL_HOUSING_WIDTH, FG_FL_BASE_HEIGHT]);
-            translate([grip_length, FG_FL_HOUSING_WIDTH/2, 0])
-                fgForgeLockRail(length=length);
+            cube([grip_length, grip_width, grip_height]);
+            translate([grip_length, grip_width/2, 0])
+                fgForgeGuideRail(length=length);
         }
         if (label != "")
-            translate([grip_length/2, FG_FL_HOUSING_WIDTH/2, FG_FL_BASE_HEIGHT-FG_TEXT_DEPTH])
-                fgText(label, size=2.7, depth=FG_TEXT_DEPTH+0.02);
+            translate([grip_length/2, grip_width/2, grip_height-FG_TEXT_DEPTH])
+                fgText(label, size=2.0, depth=FG_TEXT_DEPTH+0.02);
     }
 }

@@ -1,14 +1,15 @@
-# FG-CONN-100 — ForgeLock clearance calibration
+# FG-CONN-100 — ForgeGuide sliding-fit calibration
 
-FG-CONN-100 is the first ForgeGrid print. It separates the mechanical sliding
-fit from magnets, detents, and module weight so you can choose a baseline
-clearance using direct observations.
+FG-CONN-100 is the first ForgeGrid print. It validates a 45-degree,
+self-supporting V-guide before any final lock, magnet, or anti-lift mechanism
+is added. The open-top receiver removes the long internal bridge found in the
+withdrawn v0.2.1-alpha fixture.
 
 ## What it prints
 
 Five labelled pairs are laid out as separate pieces in one OpenSCAD scene.
-For each label, the left piece is the rail and the right piece is its captured
-channel. Match only pieces with the same label:
+For each row, the left piece is the labelled rail and the right piece is its
+matching open-top V-guide receiver. Match by row:
 
 | Pair | Clearance |
 | --- | ---: |
@@ -18,8 +19,10 @@ channel. Match only pieces with the same label:
 | C4 | 0.25 mm |
 | C5 | 0.30 mm |
 
-The connector slides along its long axis. The channel's closed end is the
-mechanical stop. The rail should be inserted at the channel's open end.
+Lower the rail into the receiver's open V-guide, then slide it along its long
+axis toward the closed end. The channel's closed end is the mechanical stop.
+The rail can intentionally lift out: this fixture tests the guide profile only,
+not the final retention mechanism.
 
 ## Print settings
 
@@ -30,10 +33,10 @@ mechanical stop. The rail should be inserted at the channel's open end.
 - Walls: 3
 - Infill: 15% gyroid (or your normal structural infill)
 - Supports: off
-- Brim: off unless your material needs it
+- Brim: off
 
-Print all pieces flat as supplied. The receiver's top bridge is deliberately
-short; inspect the bridge quality before interpreting fit results.
+Print all pieces flat as supplied. There are no internal roof bridges or
+unsupported horizontal surfaces in this revision.
 
 ## Test procedure
 
@@ -47,9 +50,10 @@ short; inspect the bridge quality before interpreting fit results.
 
 ## Acceptance target
 
-The preferred baseline should insert with firm finger pressure, slide without
-sticking, reach a clear positive stop, and have only slight perceptible play.
-This fixture is a fit experiment, **not** a structural-load or magnet test.
+The preferred baseline should lower into the guide with light pressure, slide
+without sticking, reach a clear positive stop, and have only slight perceptible
+side play. This is a profile-fit experiment, **not** a structural-load,
+magnet, or retention test.
 
 ## Next result needed
 

@@ -29,7 +29,10 @@ assets/       Reserved for images and brand assets
 
 ## Status
 
-`v0.2.0-alpha` is an experimental release. ForgeLock Gen 1 is **not yet a
+`v0.2.2-alpha` is a corrective experimental release. It replaces the
+bridge-dependent v0.2.1-alpha fixture with a self-supporting 45-degree guide.
+This release validates sliding fit only; the final retention mechanism is not
+yet defined. ForgeLock Gen 1 is **not yet a
 frozen interface**; select its baseline clearance only after printing
 FG-CONN-100 on the target printer and material.
 

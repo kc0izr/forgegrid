@@ -1,7 +1,7 @@
-/* ForgeGrid | FG_Config.scad | v0.2.0-alpha
+/* ForgeGrid | FG_Config.scad | v0.2.2-alpha
    User-adjustable printer and material settings. Units: mm. */
 
-FG_PROJECT_VERSION = "0.2.0-alpha";
+FG_PROJECT_VERSION = "0.2.2-alpha";
 FG_BUILD_DATE = "2026-07-26";
 
 // Target baseline: Anycubic Kobra 2 Neo, 0.4 mm nozzle.

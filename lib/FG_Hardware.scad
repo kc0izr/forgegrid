@@ -1,4 +1,4 @@
-/* ForgeGrid | FG_Hardware.scad | v0.2.0-alpha */
+/* ForgeGrid | FG_Hardware.scad | v0.2.1-alpha */
 include <FG_Common.scad>;
 
 module fgMagnet6x2Pocket(allowance=FG_PRESS_FIT_ALLOWANCE) {
