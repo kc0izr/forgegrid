@@ -1,0 +1,6 @@
+experiment_id,date,printer,material,nozzle_mm,layer_height_mm,pair,clearance_mm,insertion_fit,wobble,removal_feel,stop_feel,bridge_quality,selected,notes
+FGX-0001,2026-07-26,Anycubic Kobra 2 Neo,PLA+,0.4,0.2,C1,0.10,,,,,,, 
+FGX-0001,2026-07-26,Anycubic Kobra 2 Neo,PLA+,0.4,0.2,C2,0.15,,,,,,, 
+FGX-0001,2026-07-26,Anycubic Kobra 2 Neo,PLA+,0.4,0.2,C3,0.20,,,,,,, 
+FGX-0001,2026-07-26,Anycubic Kobra 2 Neo,PLA+,0.4,0.2,C4,0.25,,,,,,, 
+FGX-0001,2026-07-26,Anycubic Kobra 2 Neo,PLA+,0.4,0.2,C5,0.30,,,,,,, 
