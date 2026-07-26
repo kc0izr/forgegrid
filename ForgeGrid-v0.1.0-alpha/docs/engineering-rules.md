@@ -1,0 +1,1 @@
+- No magic numbers outside config/standards.
