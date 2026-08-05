@@ -1,6 +1,6 @@
 experiment_id,date,printer,material,nozzle_mm,layer_height_mm,pair,clearance_mm,insertion_fit,wobble,removal_feel,stop_feel,bridge_quality,selected,notes
-FGX-0001,2026-07-26,Anycubic Kobra 2 Neo,PLA+,0.4,0.2,C1,0.10,,,,,,, 
-FGX-0001,2026-07-26,Anycubic Kobra 2 Neo,PLA+,0.4,0.2,C2,0.15,,,,,,, 
-FGX-0001,2026-07-26,Anycubic Kobra 2 Neo,PLA+,0.4,0.2,C3,0.20,,,,,,, 
-FGX-0001,2026-07-26,Anycubic Kobra 2 Neo,PLA+,0.4,0.2,C4,0.25,,,,,,, 
-FGX-0001,2026-07-26,Anycubic Kobra 2 Neo,PLA+,0.4,0.2,C5,0.30,,,,,,, 
+FGX-0001,2026-07-26,Anycubic Kobra 2 Neo,PLA+,0.4,0.2,C1,0.10,Will not Insert,N/A,N/A,N/A,N/A,N/A,N/A
+FGX-0001,2026-07-26,Anycubic Kobra 2 Neo,PLA+,0.4,0.2,C2,0.15,Only inserts a small distances,N/A,N/A,N/A,N/A,N/A,N/A
+FGX-0001,2026-07-26,Anycubic Kobra 2 Neo,PLA+,0.4,0.2,C3,0.20,"Fits snug, but will not go all the way in",No Wobble,removes fine,Does not enter all the way,No issues,N/A, 
+FGX-0001,2026-07-26,Anycubic Kobra 2 Neo,PLA+,0.4,0.2,C4,0.25,Smooth Insert,No Wobble,Smooth removeal,Stops at the end point,No issues,Yes, 
+FGX-0001,2026-07-26,Anycubic Kobra 2 Neo,PLA+,0.4,0.2,C5,0.30,Loose insert,Some Wobble,Loose removal,Stops at the end point,No issues,No, 

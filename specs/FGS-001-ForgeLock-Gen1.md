@@ -1,18 +1,15 @@
-# FGS-001 — ForgeLock Gen 1 (draft)
+# FGS-001: ForgeLock Gen1
 
-**Status:** experimental; not frozen.
+Status: Provisional
 
-The original captured inverted-T concept is under redesign. FG-CONN-100 in
-v0.2.2-alpha validates the ForgeGuide 45-degree sliding profile only; it is
-not yet a ForgeLock retention standard.
+## Confirmed
+- Sliding clearance: 0.25 mm
+- Captured T rail/channel profile
+- Flat print orientation
+- No supports
 
-## Fit variants
-
-FG-CONN-100 tests clearances of 0.10, 0.15, 0.20, 0.25, and 0.30 mm. The
-winning variant must be recorded before a product module depends on it.
-
-## Compatibility contract
-
-No production compatibility is promised in this alpha release. Once frozen,
-the rail profile, channel profile, nominal clearance, and engagement length
-will receive a distinct ForgeLock Gen 1 specification revision.
+## Under test
+- Engagement length
+- Magnet placement
+- Mechanical stop
+- Wear behavior

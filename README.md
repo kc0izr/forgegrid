@@ -1,55 +1,15 @@
 # ForgeGrid
 
-ForgeGrid is a parametric, 3D-printable modular workstation ecosystem. This
-alpha release establishes the ForgeLock Gen 1 connector experiment and the
-first print-validation workflow.
+ForgeGrid is an engineering-first OpenSCAD system for modular organizers and accessories.
 
-## First print
+## Release
+**v0.3.0-alpha**
 
-Either slice the included pre-rendered
-`prototypes/FG-CONN-100/FG-CONN-100.stl`, or open
-`prototypes/FG-CONN-100/FG-CONN-100.scad` in OpenSCAD, render (`F6`), export
-STL, and print it. The fixture produces five separately labelled rail/channel
-pairs with clearances from 0.10 mm through 0.30 mm.
+- Validated ForgeLock sliding clearance: **0.25 mm**
+- Evidence: **FG-CONN-100 C4**
+- New printable experiment: **FG-CONN-200 Engagement Length Test**
 
-Read the prototype [instructions](prototypes/FG-CONN-100/README.md) before
-printing. Record your observations in `RESULTS.csv` or the printable worksheet.
+## What to print
+Open `prototypes/FG-CONN-200/FG-CONN-200.scad`, render with F6, export STL, and print all generated parts.
 
-## Repository layout
-
-```text
-lib/          Reusable OpenSCAD library files
-prototypes/   Engineering experiments and test fixtures
-docs/         Project, print, and engineering documentation
-specs/        Design contracts and engineering rules
-tests/        Renderable regression layouts
-examples/     Small example models
-assets/       Reserved for images and brand assets
-```
-
-## Status
-
-`v0.2.2-alpha` is a corrective experimental release. It replaces the
-bridge-dependent v0.2.1-alpha fixture with a self-supporting 45-degree guide.
-This release validates sliding fit only; the final retention mechanism is not
-yet defined. ForgeLock Gen 1 is **not yet a
-frozen interface**; select its baseline clearance only after printing
-FG-CONN-100 on the target printer and material.
-
-## Design rules
-
-- Dimensions are millimetres.
-- Public OpenSCAD modules use the `fg` prefix; private helpers use `_fg`.
-- Avoid magic dimensions in product files: place standards in
-  `lib/FG_Standards.scad` and printer tuning in `lib/FG_Config.scad`.
-- Production modules must identify their revision and have a relevant test.
-
-## Suggested first commit
-
-`feat: add ForgeGrid v0.2.0-alpha connector calibration release`
-
-## License and name
-
-Code and models in this repository are released under the MIT License. The
-ForgeGrid and ForgeLock names are project identifiers; conduct a trademark
-search before using either name commercially.
+The fixture contains ENG-010, ENG-015, ENG-020, ENG-025, and ENG-030 rail/channel pairs.

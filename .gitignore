@@ -1,19 +1,6 @@
-# OpenSCAD generated output
 *.stl
 *.3mf
-*.amf
-*.csg
-*.png
-*.svg
-
-# Slicer output and local calibration data
 *.gcode
-*.gcode.3mf
-*.log
 *.bak
-*.tmp
-
-# OS/editor metadata
 .DS_Store
 Thumbs.db
-.vscode/
