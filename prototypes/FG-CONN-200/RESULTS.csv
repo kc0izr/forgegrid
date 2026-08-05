@@ -1,6 +1,6 @@
 experiment_id,prototype,variant,engagement_mm,clearance_mm,printer,material,nozzle_mm,layer_height_mm,insertion_score_1_5,removal_score_1_5,wobble_score_1_5,vertical_play_score_1_5,twist_resistance_score_1_5,overall_score_1_5,pass_fail,notes
-FGX-0002,FG-CONN-200,ENG-010,10,0.25,Anycubic Kobra 2 Neo,,0.4,0.20,,,,,,,,
-FGX-0002,FG-CONN-200,ENG-015,15,0.25,Anycubic Kobra 2 Neo,,0.4,0.20,,,,,,,,
-FGX-0002,FG-CONN-200,ENG-020,20,0.25,Anycubic Kobra 2 Neo,,0.4,0.20,,,,,,,,
-FGX-0002,FG-CONN-200,ENG-025,25,0.25,Anycubic Kobra 2 Neo,,0.4,0.20,,,,,,,,
-FGX-0002,FG-CONN-200,ENG-030,30,0.25,Anycubic Kobra 2 Neo,,0.4,0.20,,,,,,,,
+FGX-0002,FG-CONN-200,ENG-010,10,0.25,Anycubic Kobra 2 Neo,,0.4,0.20,,,,,,,,,
+FGX-0002,FG-CONN-200,ENG-015,15,0.25,Anycubic Kobra 2 Neo,,0.4,0.20,,,,,,,,,
+FGX-0002,FG-CONN-200,ENG-020,20,0.25,Anycubic Kobra 2 Neo,,0.4,0.20,,,,,,,,,
+FGX-0002,FG-CONN-200,ENG-025,25,0.25,Anycubic Kobra 2 Neo,,0.4,0.20,,,,,,,,,
+FGX-0002,FG-CONN-200,ENG-030,30,0.25,Anycubic Kobra 2 Neo,,0.4,0.20,,,,,,,,,

@@ -1,6 +1,7 @@
 *.stl
 *.3mf
 *.gcode
+*.ini
 *.bak
 .DS_Store
 Thumbs.db

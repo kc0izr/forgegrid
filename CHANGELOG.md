@@ -1,15 +1,17 @@
 # Changelog
 
-## 0.3.0-alpha - 2026-08-04
+## 0.3.1-alpha - 2026-08-04
+
+### Fixed
+- Corrected rail geometry that extended below the Z=0 print datum.
+- Corrected channel/test-part placement so every part rests flush on the bed.
+- Replaced rotated profile extrusion with axis-aligned solid construction.
 
 ### Added
-- FG-CONN-200 printable engagement-length test.
-- Results worksheet for 10, 15, 20, 25, and 30 mm engagement lengths.
-- EDR-0001 documenting the selected 0.25 mm connector clearance.
-- Draft ForgeLock Gen1 specification.
+- FG-CONN-000 datum and geometry verification fixture.
+- Datum assertions and parameter validation.
+- Updated print-check instructions.
 
-### Changed
-- Default ForgeLock sliding clearance is now 0.25 mm.
-
-### Known limitations
-- Magnet pockets are intentionally excluded so engagement length is isolated.
+### Retained
+- Validated ForgeLock clearance: 0.25 mm.
+- FG-CONN-200 engagement candidates: 10, 15, 20, 25, and 30 mm.

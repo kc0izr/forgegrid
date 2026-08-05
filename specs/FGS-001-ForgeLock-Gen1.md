@@ -4,12 +4,12 @@ Status: Provisional
 
 ## Confirmed
 - Sliding clearance: 0.25 mm
-- Captured T rail/channel profile
-- Flat print orientation
-- No supports
+- Build datum: intended print surface at Z=0
+- Supports: none for test coupons
 
 ## Under test
 - Engagement length
 - Magnet placement
 - Mechanical stop
+- Anti-rattle preload
 - Wear behavior

@@ -1,15 +1,28 @@
 # ForgeGrid
 
-ForgeGrid is an engineering-first OpenSCAD system for modular organizers and accessories.
+ForgeGrid is an engineering-first OpenSCAD system for modular card, gaming,
+workshop, and desktop accessories.
 
 ## Release
-**v0.3.0-alpha**
 
-- Validated ForgeLock sliding clearance: **0.25 mm**
-- Evidence: **FG-CONN-100 C4**
-- New printable experiment: **FG-CONN-200 Engagement Length Test**
+**v0.3.1-alpha**
 
-## What to print
-Open `prototypes/FG-CONN-200/FG-CONN-200.scad`, render with F6, export STL, and print all generated parts.
+This release corrects the ForgeLock datum/orientation bug found in v0.3.0-alpha.
 
-The fixture contains ENG-010, ENG-015, ENG-020, ENG-025, and ENG-030 rail/channel pairs.
+## What changed
+
+- All printable test parts now begin at **Z = 0**.
+- Rail geometry is constructed from axis-aligned solids rather than a rotated
+  2D extrusion.
+- Channel geometry and labels use the same bottom datum.
+- Added `FG-CONN-000`, a small geometry verification print.
+- Rebuilt `FG-CONN-200` using the corrected connector library.
+
+## Print order
+
+1. Print `prototypes/FG-CONN-000/FG-CONN-000.scad`.
+2. Confirm every piece is flat on the build plate in your slicer.
+3. If it looks correct, print
+   `prototypes/FG-CONN-200/FG-CONN-200.scad`.
+
+All dimensions are millimeters.

@@ -1,12 +1,27 @@
+/*
+ForgeGrid Engineering Standards
+File: FG_Standards.scad
+Version: 0.3.1-alpha
+*/
+
 include <FG_Config.scad>;
+
+// ForgeLock Gen1 provisional T profile
 FG_FL_NECK_WIDTH = 8.0;
 FG_FL_HEAD_WIDTH = 12.0;
 FG_FL_NECK_HEIGHT = 3.0;
 FG_FL_HEAD_HEIGHT = 3.0;
 FG_FL_TOTAL_HEIGHT = FG_FL_NECK_HEIGHT + FG_FL_HEAD_HEIGHT;
+
 FG_FL_BASE_THICKNESS = 3.0;
+FG_FL_CHANNEL_SIDE_WALL = 3.0;
 FG_FL_CHANNEL_TOP_WALL = 2.4;
-FG_FL_LEAD_IN = 1.5;
+FG_FL_LEAD_IN = 1.2;
+
+// Test fixture
 FG_TEST_BLOCK_WIDTH = 20.0;
+FG_TEST_LABEL_TAB = 10.0;
 FG_TEST_LABEL_DEPTH = 0.45;
-FG_TEST_LABEL_SIZE = 3.2;
+FG_TEST_LABEL_SIZE = 3.0;
+FG_TEST_ROW_PITCH = 42.0;
+FG_TEST_PAIR_GAP = 12.0;

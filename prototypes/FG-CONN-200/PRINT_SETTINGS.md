@@ -7,3 +7,4 @@
 - Top/bottom: 5
 - Infill: 15%
 - Supports: Off
+- Orientation: As generated
